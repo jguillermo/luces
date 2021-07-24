@@ -1,0 +1,206 @@
+#INCLUDE "C:\Archivos de programa\PICC\Devices\16f877a.h"
+#FUSES HS,NOWDT,NOLVP,PUT,NOPROTECT
+#USE delay(clock=20000000)
+#BYTE PORTB=0x06 
+#BYTE PORTD=0x08 
+#BIT RD0=0x08.0
+#BIT RD1=0x08.1
+#BIT RD2=0x08.2
+#BIT RD3=0x08.3
+#BIT RD4=0x08.4
+
+
+long tiemp=500;
+
+int const letherA1[5]={0x7E,0x09,0x09,0x09,0x7E};
+int const letherA2[5]={0x7F,0x49,0x49,0x49,0x36};
+int const letherA3[5]={0x3E,0x41,0x41,0x41,0x22};
+int const letherA4[5]={0x41,0x7F,0x41,0x41,0x3E};
+int const letherA5[5]={0x7F,0x49,0x49,0x41,0x41};
+void letraA1()
+	{
+        RD4=0;
+		PORTB=letherA1[0];
+		RD0=1;	
+		delay_us(tiemp);
+		
+		RD0=0;
+		PORTB=letherA1[1];
+		RD1=1;	
+		delay_us(tiemp);
+		
+		RD1=0;
+		PORTB=letherA1[2];
+		RD2=1;	
+		delay_us(tiemp);
+		
+		RD2=0;
+		PORTB=letherA1[3];
+		RD3=1;	
+		delay_us(tiemp);
+		
+		RD3=0;
+		PORTB=letherA1[4];
+		RD4=1;	
+		delay_us(tiemp);
+}
+
+
+void letraA2()
+	{
+        RD4=0;
+		PORTB=letherA2[0];
+		RD0=1;	
+		delay_us(tiemp);
+		
+		RD0=0;
+		PORTB=letherA2[1];
+		RD1=1;	
+		delay_us(tiemp);
+		
+		RD1=0;
+		PORTB=letherA2[2];
+		RD2=1;	
+		delay_us(tiemp);
+		
+		RD2=0;
+		PORTB=letherA2[3];
+		RD3=1;	
+		delay_us(tiemp);
+		
+		RD3=0;
+		PORTB=letherA2[4];
+		RD4=1;	
+		delay_us(tiemp);
+}
+
+
+
+void letraA3()
+	{
+        RD4=0;
+		PORTB=letherA3[0];
+		RD0=1;	
+		delay_us(tiemp);
+		
+		RD0=0;
+		PORTB=letherA3[1];
+		RD1=1;	
+		delay_us(tiemp);
+		
+		RD1=0;
+		PORTB=letherA3[2];
+		RD2=1;	
+		delay_us(tiemp);
+		
+		RD2=0;
+		PORTB=letherA3[3];
+		RD3=1;	
+		delay_us(tiemp);
+		
+		RD3=0;
+		PORTB=letherA3[4];
+		RD4=1;	
+		delay_us(tiemp);
+}
+
+
+
+void letraA4()
+	{
+        RD4=0;
+		PORTB=letherA4[0];
+		RD0=1;	
+		delay_us(tiemp);
+		
+		RD0=0;
+		PORTB=letherA4[1];
+		RD1=1;	
+		delay_us(tiemp);
+		
+		RD1=0;
+		PORTB=letherA4[2];
+		RD2=1;	
+		delay_us(tiemp);
+		
+		RD2=0;
+		PORTB=letherA4[3];
+		RD3=1;	
+		delay_us(tiemp);
+		
+		RD3=0;
+		PORTB=letherA4[4];
+		RD4=1;	
+		delay_us(tiemp);
+}
+
+
+
+void letraA5()
+	{
+        RD4=0;
+		PORTB=letherA5[0];
+		RD0=1;	
+		delay_us(tiemp);
+		
+		RD0=0;
+		PORTB=letherA5[1];
+		RD1=1;	
+		delay_us(tiemp);
+		
+		RD1=0;
+		PORTB=letherA5[2];
+		RD2=1;	
+		delay_us(tiemp);
+		
+		RD2=0;
+		PORTB=letherA5[3];
+		RD3=1;	
+		delay_us(tiemp);
+		
+		RD3=0;
+		PORTB=letherA5[4];
+		RD4=1;	
+		delay_us(tiemp);
+}
+
+
+
+
+
+void main(void)
+{
+	long nh=0;
+	long useg1,useg2,useg3,useg4,useg5,useg6;
+	useg1=1000;
+	useg2=useg1*2;
+	useg3=useg1*3;
+	useg4=useg1*4;
+	useg5=useg1*5;
+	useg6=useg1*6;
+	set_tris_b(0x00);
+	set_tris_d(0x00);
+	PORTB=0;
+	PORTD=0;
+	while(TRUE)
+	{	
+		
+	   if (nh<=useg1)
+	   {	letraA1();}
+	   else if( nh<=useg2 )
+       {	letraA2();}
+       else if(nh<=useg3)
+       {	letraA3();}
+       else if (nh<=useg4)
+       {	letraA4();}
+       else if (nh<=useg5)
+       {	letraA5();}	
+       		
+	 		nh++;
+	 		if (nh>=useg6)
+	 		{
+	 			nh=0;
+	 		}
+		
+	}	
+}

@@ -1,0 +1,55 @@
+
+ROM used: 452 (6%)
+          452 (6%) including unused fragments
+
+          1 Average locations per line
+          6 Average locations per statement
+
+RAM used: 14 (4%) at main() level
+          20 (5%) worst case
+
+Stack used: 3 worst case (out of 8 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  150    73 100  mainLuces.c
+  313     0   0  C:\Archivos de programa\PICC\Devices\16f877a.h
+----- -----
+  463    73 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+ Inline        1             @delay_ms1
+0      5   1   0    17  0.8  waitjg
+0     22   5   0    17  0.8  waitletra
+0    179  40   0             @const65
+ Inline        0    82  1.6  set0
+ Inline        0    82  1.6  set1
+ Inline        0    50  1.5  reset
+0     41   9   5   201  5.7  fila
+0     37   8   2             @MUL88
+0    100  22   1   741  2.4  letra
+0     64  14   5   598  4.9  MAIN
+
+Program metrics:
+    Functions               8
+    Statements              73
+    Comments                99
+    Volume (V)              2581
+    Difficilty (D)          20.2
+    Effort to implement (E) 52163
+    Time to implement (T)   48 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   4
+    Maintainability (MI)    68
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF   448  1596  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

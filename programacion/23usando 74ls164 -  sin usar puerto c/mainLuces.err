@@ -1,0 +1,5 @@
+>>> Warning 202 "mainLuces.c" Line 21(14,22): Variable never used:   auxportb
+>>> Warning 202 "mainLuces.c" Line 22(7,12): Variable never used:   apaga
+>>> Warning 202 "mainLuces.c" Line 22(15,21): Variable never used:   prende
+      Memory usage:   ROM=8%      RAM=10% - 11%
+      0 Errors,  3 Warnings.

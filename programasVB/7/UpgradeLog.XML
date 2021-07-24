@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="matrixLED">
+</Property><Property Name="Archivo de la solución" Value="D:\luces\programasVB\7\matrixLED.sln">
+</Property><Property Name="Archivo de opciones de usuario" Value="D:\luces\programasVB\7\matrixLED.suo">
+</Property><Property Name="Date" Value="sábado, 08 de enero de 2011">
+</Property><Property Name="Time" Value="17:12: pm">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="matrixLED.sln" Description="La copia D:\luces\programasVB\7\Backup\matrixLED.sln del archivo se ha realizado correctamente">
+</Event><Event ErrorLevel="0" Project="" Source="matrixLED.suo" Description="La copia D:\luces\programasVB\7\Backup\matrixLED.suo del archivo se ha realizado correctamente">
+</Event><Event ErrorLevel="0" Project="matrixLED" Source="matrixLED.vbproj" Description="Se realizó correctamente la copia de seguridad del archivo de proyecto D:\luces\programasVB\7\Backup\matrixLED.vbproj">
+</Event><Event ErrorLevel="0" Project="matrixLED" Source="matrixLED.vbproj.user" Description="La copia de seguridad D:\luces\programasVB\7\Backup\matrixLED.vbproj.user del archivo se ha creado correctamente">
+</Event><Event ErrorLevel="0" Project="matrixLED" Source="Form1.vb" Description="Se realizó correctamente la copia de seguridad del archivo D:\luces\programasVB\7\Backup\Form1.vb">
+</Event><Event ErrorLevel="0" Project="matrixLED" Source="Form1.Designer.vb" Description="Se realizó correctamente la copia de seguridad del archivo D:\luces\programasVB\7\Backup\Form1.Designer.vb">
+</Event><Event ErrorLevel="0" Project="matrixLED" Source="My Project\AssemblyInfo.vb" Description="Se realizó correctamente la copia de seguridad del archivo D:\luces\programasVB\7\Backup\My Project\AssemblyInfo.vb">
+</Event><Event ErrorLevel="0" Project="matrixLED" Source="My Project\Application.Designer.vb" Description="Se realizó correctamente la copia de seguridad del archivo D:\luces\programasVB\7\Backup\My Project\Application.Designer.vb">
+</Event><Event ErrorLevel="0" Project="matrixLED" Source="My Project\Resources.Designer.vb" Description="Se realizó correctamente la copia de seguridad del archivo D:\luces\programasVB\7\Backup\My Project\Resources.Designer.vb">
+</Event><Event ErrorLevel="0" Project="matrixLED" Source="My Project\Settings.Designer.vb" Description="Se realizó correctamente la copia de seguridad del archivo D:\luces\programasVB\7\Backup\My Project\Settings.Designer.vb">
+</Event><Event ErrorLevel="0" Project="matrixLED" Source="My Project\Application.myapp" Description="Se realizó correctamente la copia de seguridad del archivo D:\luces\programasVB\7\Backup\My Project\Application.myapp">
+</Event><Event ErrorLevel="0" Project="matrixLED" Source="My Project\Settings.settings" Description="Se realizó correctamente la copia de seguridad del archivo D:\luces\programasVB\7\Backup\My Project\Settings.settings">
+</Event><Event ErrorLevel="0" Project="matrixLED" Source="Form1.resx" Description="Se realizó correctamente la copia de seguridad del archivo D:\luces\programasVB\7\Backup\Form1.resx">
+</Event><Event ErrorLevel="0" Project="matrixLED" Source="My Project\Resources.resx" Description="Se realizó correctamente la copia de seguridad del archivo D:\luces\programasVB\7\Backup\My Project\Resources.resx">
+</Event><Event ErrorLevel="0" Project="matrixLED" Source="matrixLED.vbproj" Description="Proyecto convertido correctamente">
+</Event><Event ErrorLevel="3" Project="matrixLED" Source="matrixLED.vbproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="matrixLED.sln" Description="La solución se convirtió correctamente">
+</Event><Event ErrorLevel="3" Project="" Source="matrixLED.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="matrixLED" Source="matrixLED.vbproj" Description="Examen completo: no es necesario actualizar los archivos de proyecto.">
+</Event></UpgradeLog>

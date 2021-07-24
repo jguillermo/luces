@@ -1,0 +1,97 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004     @WRITE_PROGRAM_MEMORY8.P2
+007     PORTC
+008.0   RD0
+008     PORTD
+008     PSP_DATA
+008.1   RD1
+008.2   RD2
+015     CCP_1_LOW
+015-016 CCP_1
+016     CCP_1_HIGH
+01B-01C CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020     useg1
+021     useg2
+022     aux
+023     iaux
+024     apbi
+025     apbi2
+026     intsb
+027     auxfila
+028     i
+029     iselect
+02A     num
+02B     num2
+02C     posled2
+02D-032 letpos
+033-039 portprende
+03A     @TRIS_C
+03B     main.nh
+03C     main.cmde
+03D     main.csc
+03E     fila.nu
+03E     @delay_ms1.P1
+03E     intercambianumletra.@SCRATCH1
+03E     letrero2.@SCRATCH1
+03E     letrero3.@SCRATCH1
+03F     fila.@SCRATCH1
+03F     intercambianumletra.@SCRATCH2
+040     @MUL88.P1
+040     fila.@SCRATCH2
+041     @MUL88.P1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+07B     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+0135  @delay_ms1
+0004  lether
+01BE  main
+0093  fila
+0069  @MUL88
+0169  intercambianumletra
+008E  set01
+014A  letrero
+0180  letrero2
+019F  letrero3
+0063  reset
+015F  pausaletrero
+01BE  @cinit
+
+Project Directory:
+    D:\luces\programacion\26usando 74ls164 nuevo puerto el C\
+
+Project Files:
+    mainLuces.c
+    C:\Archivos de programa\PICC\Devices\16f877a.h
+
+Units:
+    mainLuces.c (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      mainLuces.err
+    Ext Symbols: mainLuces.esym
+    INHX8:       mainLuces.hex
+    Symbols:     mainLuces.sym
+    List:        mainLuces.lst
+    Debug/COFF:  mainLuces.cof
+    Project:     mainLuces.PJT
+    Call Tree:   mainLuces.tre
+    Statistics:  mainLuces.sta

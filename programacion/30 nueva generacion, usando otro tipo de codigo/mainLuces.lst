@@ -1,0 +1,729 @@
+CCS PCM C Compiler, Version 4.057, 6212               21-ene-11 10:11
+
+               Filename: mainLuces.lst
+
+               ROM used: 611 words (7%)
+                         Largest free fragment is 2048
+               RAM used: 72 (20%) at main() level
+                         82 (22%) worst case
+               Stack:    3 locations
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   1E6
+0003:  NOP
+.................... #INCLUDE "C:\Archivos de programa\PICC\Devices\16f877a.h" 
+.................... //////// Standard Header file for the PIC16F877A device //////////////// 
+.................... #device PIC16F877A 
+.................... #list 
+....................  
+.................... #FUSES HS,NOWDT,NOLVP,PUT,NOPROTECT 
+.................... #USE delay(clock=4000000) 
+*
+01CD:  MOVLW  62
+01CE:  MOVWF  04
+01CF:  BCF    03.7
+01D0:  MOVF   00,W
+01D1:  BTFSC  03.2
+01D2:  GOTO   1E1
+01D3:  MOVLW  01
+01D4:  MOVWF  78
+01D5:  CLRF   77
+01D6:  DECFSZ 77,F
+01D7:  GOTO   1D6
+01D8:  DECFSZ 78,F
+01D9:  GOTO   1D5
+01DA:  MOVLW  4A
+01DB:  MOVWF  77
+01DC:  DECFSZ 77,F
+01DD:  GOTO   1DC
+01DE:  GOTO   1DF
+01DF:  DECFSZ 00,F
+01E0:  GOTO   1D3
+.................... #BYTE PORTC=0x07 
+.................... #BYTE PORTD=0x08  
+....................  
+.................... #BIT RD0=0x08.0//data 
+.................... #BIT RD1=0x08.1//clock 
+.................... #BIT RD2=0x08.2//reset 
+....................  
+.................... int useg1=50; 
+*
+01F1:  MOVLW  32
+01F2:  BCF    03.5
+01F3:  MOVWF  20
+.................... int aux,iaux,apbi,apbi2,intsb=0,auxfila,nufra; 
+01F4:  CLRF   25
+.................... int i,j,iselect=0; 
+01F5:  CLRF   2A
+.................... int num=5,num2=0,posled2=1; 
+01F6:  MOVLW  05
+01F7:  MOVWF  2B
+01F8:  CLRF   2C
+01F9:  MOVLW  01
+01FA:  MOVWF  2D
+.................... int portprende[7]={0x01,0x02,0x04,0x08,0x10,0x20,0x40}; 
+01FB:  MOVWF  2E
+01FC:  MOVLW  02
+01FD:  MOVWF  2F
+01FE:  MOVLW  04
+01FF:  MOVWF  30
+0200:  MOVLW  08
+0201:  MOVWF  31
+0202:  MOVLW  10
+0203:  MOVWF  32
+0204:  MOVLW  20
+0205:  MOVWF  33
+0206:  MOVLW  40
+0207:  MOVWF  34
+.................... int letras,nu1,nu2; 
+.................... int tl2; 
+....................  
+....................  
+.................... int const  vacio[7]={0x7F,0x7F,0x7F,0x7F,0x7F,0x7F,0x7F};  //  0 
+.................... int const  A[5]={0x01,0x76,0x76,0x76,0x01};  //  1 
+.................... int const  B[6]={0x00,0x00,0x36,0x36,0x36,0x49};  //  2 
+.................... int const  C[6]={0x00,0x00,0x3E,0x3E,0x3E,0x3E};  //  3 
+.................... int const  D[7]={0x3E,0x00,0x00,0x3E,0x3E,0x3E,0x41};  //4   
+.................... int const  E[7]={0x3E,0x00,0x00,0x36,0x36,0x36,0x3E};  // 5  
+.................... int const  apos[1]={0x7C};  //   6 
+....................  
+....................  
+.................... int tamletra[13]={7,7,6,6,6,6,7,7,7,7,1,1,7}; 
+0208:  MOVLW  07
+0209:  MOVWF  39
+020A:  MOVWF  3A
+020B:  MOVLW  06
+020C:  MOVWF  3B
+020D:  MOVWF  3C
+020E:  MOVWF  3D
+020F:  MOVWF  3E
+0210:  MOVLW  07
+0211:  MOVWF  3F
+0212:  MOVWF  40
+0213:  MOVWF  41
+0214:  MOVWF  42
+0215:  MOVLW  01
+0216:  MOVWF  43
+0217:  MOVWF  44
+0218:  MOVLW  07
+0219:  MOVWF  45
+....................    int frace[13]={1,1,2,2,3,3,4,4,5,5,6,6,0};  
+021A:  MOVLW  01
+021B:  MOVWF  46
+021C:  MOVWF  47
+021D:  MOVLW  02
+021E:  MOVWF  48
+021F:  MOVWF  49
+0220:  MOVLW  03
+0221:  MOVWF  4A
+0222:  MOVWF  4B
+0223:  MOVLW  04
+0224:  MOVWF  4C
+0225:  MOVWF  4D
+0226:  MOVLW  05
+0227:  MOVWF  4E
+0228:  MOVWF  4F
+0229:  MOVLW  06
+022A:  MOVWF  50
+022B:  MOVWF  51
+022C:  CLRF   52
+.................... int posletra[13]={0,1,2,3,4,5,6,7,8,9,10,11,12}; 
+022D:  CLRF   53
+022E:  MOVLW  01
+022F:  MOVWF  54
+0230:  MOVLW  02
+0231:  MOVWF  55
+0232:  MOVLW  03
+0233:  MOVWF  56
+0234:  MOVLW  04
+0235:  MOVWF  57
+0236:  MOVLW  05
+0237:  MOVWF  58
+0238:  MOVLW  06
+0239:  MOVWF  59
+023A:  MOVLW  07
+023B:  MOVWF  5A
+023C:  MOVLW  08
+023D:  MOVWF  5B
+023E:  MOVLW  09
+023F:  MOVWF  5C
+0240:  MOVLW  0A
+0241:  MOVWF  5D
+0242:  MOVLW  0B
+0243:  MOVWF  5E
+0244:  MOVLW  0C
+0245:  MOVWF  5F
+....................  
+.................... void intercambialetras(); 
+.................... void reset(); 
+.................... void set01(); 
+.................... void letrero(); 
+.................... void recargadatos(); 
+.................... void llenafila(int nu,int letra, int ini, int fin); 
+.................... void fila(int nu); 
+....................  
+.................... void main(void) 
+.................... { 
+*
+01E6:  CLRF   04
+01E7:  BCF    03.7
+01E8:  MOVLW  1F
+01E9:  ANDWF  03,F
+01EA:  BSF    03.5
+01EB:  BSF    1F.0
+01EC:  BSF    1F.1
+01ED:  BSF    1F.2
+01EE:  BCF    1F.3
+01EF:  MOVLW  07
+01F0:  MOVWF  1C
+....................     int nh=0; 
+*
+0248:  CLRF   61
+.................... 	set_tris_c(0x00);  // 1=ENTRADA, 0=SALIDA  
+*
+0246:  MOVLW  FF
+0247:  MOVWF  60
+*
+0249:  MOVLW  00
+024A:  BSF    03.5
+024B:  MOVWF  07
+024C:  BCF    03.5
+024D:  MOVWF  60
+.................... 	set_tris_d(0x00);  
+024E:  BSF    03.5
+024F:  MOVWF  08
+....................     PORTC=0; 
+0250:  BCF    03.5
+0251:  CLRF   07
+.................... 	PORTD=1; 
+0252:  MOVLW  01
+0253:  MOVWF  08
+.................... 	reset(); 
+0254:  GOTO   047
+.................... 	nu1=0; 
+0255:  CLRF   36
+.................... 	nu2=0; 
+0256:  CLRF   37
+.................... 	letras=1; 
+0257:  MOVLW  01
+0258:  MOVWF  35
+.................... 	recargadatos(); 
+0259:  CALL   04D
+.................... 	while(TRUE) 
+....................     {	nh++; 
+025A:  INCF   61,F
+.................... 		 
+.................... 						 
+.................... 						if (nh<=useg1) 
+025B:  MOVF   61,W
+025C:  SUBWF  20,W
+025D:  BTFSC  03.0
+.................... 	   	    				letrero(); 
+025E:  GOTO   170
+....................      					else    
+....................       	   					{nh=0;recargadatos();} 
+025F:  CLRF   61
+0260:  CALL   04D
+.................... 							 
+....................            			 
+....................      }      	 
+0261:  GOTO   25A
+.................... } 
+....................  
+....................  
+....................  
+.................... void llenafila(int nu,int letra, int ini, int fin) 
+.................... { 
+0262:  SLEEP
+.................... 			switch (letra)  
+.................... 				{ 
+*
+00A6:  MOVF   68,W
+00A7:  ADDLW  F9
+00A8:  BTFSC  03.0
+00A9:  GOTO   162
+00AA:  ADDLW  07
+00AB:  GOTO   165
+.................... 			    case 0:	for(i=ini;i<=fin;i++){RD0=bit_test(vacio[i],nu) ;set01();}break; 
+00AC:  MOVF   69,W
+00AD:  MOVWF  28
+00AE:  MOVF   28,W
+00AF:  SUBWF  6A,W
+00B0:  BTFSS  03.0
+00B1:  GOTO   0C5
+00B2:  MOVF   28,W
+00B3:  CALL   004
+00B4:  MOVWF  6B
+00B5:  MOVWF  77
+00B6:  MOVF   67,W
+00B7:  MOVWF  78
+00B8:  BTFSC  03.2
+00B9:  GOTO   0BE
+00BA:  BCF    03.0
+00BB:  RRF    77,F
+00BC:  DECFSZ 78,F
+00BD:  GOTO   0BA
+00BE:  BTFSS  77.0
+00BF:  BCF    08.0
+00C0:  BTFSC  77.0
+00C1:  BSF    08.0
+00C2:  CALL   0A1
+00C3:  INCF   28,F
+00C4:  GOTO   0AE
+00C5:  GOTO   162
+....................     			case 1: for(i=ini;i<fin;i++){RD0=bit_test(A[i],nu) ;set01();}break;	 
+00C6:  MOVF   69,W
+00C7:  MOVWF  28
+00C8:  MOVF   6A,W
+00C9:  SUBWF  28,W
+00CA:  BTFSC  03.0
+00CB:  GOTO   0DF
+00CC:  MOVF   28,W
+00CD:  CALL   00F
+00CE:  MOVWF  6B
+00CF:  MOVWF  77
+00D0:  MOVF   67,W
+00D1:  MOVWF  78
+00D2:  BTFSC  03.2
+00D3:  GOTO   0D8
+00D4:  BCF    03.0
+00D5:  RRF    77,F
+00D6:  DECFSZ 78,F
+00D7:  GOTO   0D4
+00D8:  BTFSS  77.0
+00D9:  BCF    08.0
+00DA:  BTFSC  77.0
+00DB:  BSF    08.0
+00DC:  CALL   0A1
+00DD:  INCF   28,F
+00DE:  GOTO   0C8
+00DF:  GOTO   162
+.................... 			   	case 2: for(i=ini;i<=fin;i++){RD0=bit_test(B[i],nu) ;set01();}break;	 
+00E0:  MOVF   69,W
+00E1:  MOVWF  28
+00E2:  MOVF   28,W
+00E3:  SUBWF  6A,W
+00E4:  BTFSS  03.0
+00E5:  GOTO   0F9
+00E6:  MOVF   28,W
+00E7:  CALL   018
+00E8:  MOVWF  6B
+00E9:  MOVWF  77
+00EA:  MOVF   67,W
+00EB:  MOVWF  78
+00EC:  BTFSC  03.2
+00ED:  GOTO   0F2
+00EE:  BCF    03.0
+00EF:  RRF    77,F
+00F0:  DECFSZ 78,F
+00F1:  GOTO   0EE
+00F2:  BTFSS  77.0
+00F3:  BCF    08.0
+00F4:  BTFSC  77.0
+00F5:  BSF    08.0
+00F6:  CALL   0A1
+00F7:  INCF   28,F
+00F8:  GOTO   0E2
+00F9:  GOTO   162
+.................... 				case 3: for(i=ini;i<=fin;i++){RD0=bit_test(C[i],nu) ;set01();}break; 
+00FA:  MOVF   69,W
+00FB:  MOVWF  28
+00FC:  MOVF   28,W
+00FD:  SUBWF  6A,W
+00FE:  BTFSS  03.0
+00FF:  GOTO   113
+0100:  MOVF   28,W
+0101:  CALL   022
+0102:  MOVWF  6B
+0103:  MOVWF  77
+0104:  MOVF   67,W
+0105:  MOVWF  78
+0106:  BTFSC  03.2
+0107:  GOTO   10C
+0108:  BCF    03.0
+0109:  RRF    77,F
+010A:  DECFSZ 78,F
+010B:  GOTO   108
+010C:  BTFSS  77.0
+010D:  BCF    08.0
+010E:  BTFSC  77.0
+010F:  BSF    08.0
+0110:  CALL   0A1
+0111:  INCF   28,F
+0112:  GOTO   0FC
+0113:  GOTO   162
+....................     			case 4: for(i=ini;i<=fin;i++){RD0=bit_test(D[i],nu) ;set01();}break; 
+0114:  MOVF   69,W
+0115:  MOVWF  28
+0116:  MOVF   28,W
+0117:  SUBWF  6A,W
+0118:  BTFSS  03.0
+0119:  GOTO   12D
+011A:  MOVF   28,W
+011B:  CALL   02C
+011C:  MOVWF  6B
+011D:  MOVWF  77
+011E:  MOVF   67,W
+011F:  MOVWF  78
+0120:  BTFSC  03.2
+0121:  GOTO   126
+0122:  BCF    03.0
+0123:  RRF    77,F
+0124:  DECFSZ 78,F
+0125:  GOTO   122
+0126:  BTFSS  77.0
+0127:  BCF    08.0
+0128:  BTFSC  77.0
+0129:  BSF    08.0
+012A:  CALL   0A1
+012B:  INCF   28,F
+012C:  GOTO   116
+012D:  GOTO   162
+.................... 			   	case 5: for(i=ini;i<=fin;i++){RD0=bit_test(E[i],nu) ;set01();}break; 
+012E:  MOVF   69,W
+012F:  MOVWF  28
+0130:  MOVF   28,W
+0131:  SUBWF  6A,W
+0132:  BTFSS  03.0
+0133:  GOTO   147
+0134:  MOVF   28,W
+0135:  CALL   037
+0136:  MOVWF  6B
+0137:  MOVWF  77
+0138:  MOVF   67,W
+0139:  MOVWF  78
+013A:  BTFSC  03.2
+013B:  GOTO   140
+013C:  BCF    03.0
+013D:  RRF    77,F
+013E:  DECFSZ 78,F
+013F:  GOTO   13C
+0140:  BTFSS  77.0
+0141:  BCF    08.0
+0142:  BTFSC  77.0
+0143:  BSF    08.0
+0144:  CALL   0A1
+0145:  INCF   28,F
+0146:  GOTO   130
+0147:  GOTO   162
+.................... 				case 6: for(i=ini;i<=fin;i++){RD0=bit_test(apos[i],nu) ;set01();}break;	 
+0148:  MOVF   69,W
+0149:  MOVWF  28
+014A:  MOVF   28,W
+014B:  SUBWF  6A,W
+014C:  BTFSS  03.0
+014D:  GOTO   161
+014E:  MOVF   28,W
+014F:  CALL   042
+0150:  MOVWF  6B
+0151:  MOVWF  77
+0152:  MOVF   67,W
+0153:  MOVWF  78
+0154:  BTFSC  03.2
+0155:  GOTO   15A
+0156:  BCF    03.0
+0157:  RRF    77,F
+0158:  DECFSZ 78,F
+0159:  GOTO   156
+015A:  BTFSS  77.0
+015B:  BCF    08.0
+015C:  BTFSC  77.0
+015D:  BSF    08.0
+015E:  CALL   0A1
+015F:  INCF   28,F
+0160:  GOTO   14A
+0161:  GOTO   162
+.................... 				 } 
+.................... RD0=1; set01(); 
+0162:  BSF    08.0
+0163:  CALL   0A1
+.................... } 
+0164:  RETLW  00
+....................  
+.................... void fila(int nu) 
+.................... {    
+.................... 	llenafila(nu,frace[posletra[0]],nu1,tamletra[posletra[0]]); 
+*
+0178:  MOVLW  46
+0179:  ADDWF  53,W
+017A:  MOVWF  04
+017B:  BCF    03.7
+017C:  MOVF   00,W
+017D:  MOVWF  63
+017E:  MOVLW  39
+017F:  ADDWF  53,W
+0180:  MOVWF  04
+0181:  BCF    03.7
+0182:  MOVF   00,W
+0183:  MOVWF  64
+0184:  MOVF   62,W
+0185:  MOVWF  67
+0186:  MOVF   63,W
+0187:  MOVWF  68
+0188:  MOVF   36,W
+0189:  MOVWF  69
+018A:  MOVF   64,W
+018B:  MOVWF  6A
+018C:  CALL   0A6
+.................... 	for(j=1;j< letras;j++) 
+018D:  MOVLW  01
+018E:  MOVWF  29
+018F:  MOVF   35,W
+0190:  SUBWF  29,W
+0191:  BTFSC  03.0
+0192:  GOTO   1B2
+.................... 		llenafila(nu,frace[posletra[j]],1,tamletra[posletra[j]]); 
+0193:  MOVLW  53
+0194:  ADDWF  29,W
+0195:  MOVWF  04
+0196:  BCF    03.7
+0197:  MOVLW  46
+0198:  ADDWF  00,W
+0199:  MOVWF  04
+019A:  BCF    03.7
+019B:  MOVF   00,W
+019C:  MOVWF  64
+019D:  MOVLW  53
+019E:  ADDWF  29,W
+019F:  MOVWF  04
+01A0:  BCF    03.7
+01A1:  MOVLW  39
+01A2:  ADDWF  00,W
+01A3:  MOVWF  04
+01A4:  BCF    03.7
+01A5:  MOVF   00,W
+01A6:  MOVWF  66
+01A7:  MOVF   62,W
+01A8:  MOVWF  67
+01A9:  MOVF   64,W
+01AA:  MOVWF  68
+01AB:  MOVLW  01
+01AC:  MOVWF  69
+01AD:  MOVF   66,W
+01AE:  MOVWF  6A
+01AF:  CALL   0A6
+01B0:  INCF   29,F
+01B1:  GOTO   18F
+.................... 	llenafila(nu,frace[posletra[letras]],1,nu2); 
+01B2:  MOVLW  53
+01B3:  ADDWF  35,W
+01B4:  MOVWF  04
+01B5:  BCF    03.7
+01B6:  MOVLW  46
+01B7:  ADDWF  00,W
+01B8:  MOVWF  04
+01B9:  BCF    03.7
+01BA:  MOVF   00,W
+01BB:  MOVWF  64
+01BC:  MOVF   62,W
+01BD:  MOVWF  67
+01BE:  MOVF   64,W
+01BF:  MOVWF  68
+01C0:  MOVLW  01
+01C1:  MOVWF  69
+01C2:  MOVF   37,W
+01C3:  MOVWF  6A
+01C4:  CALL   0A6
+.................... 		 
+.................... } 
+....................  
+.................... void intercambialetras(){ 
+.................... nu1=1;aux=posletra[0]; 
+*
+0056:  MOVLW  01
+0057:  MOVWF  36
+0058:  MOVF   53,W
+0059:  MOVWF  21
+.................... for(iaux=0;iaux<13;iaux++) 
+005A:  CLRF   22
+005B:  MOVF   22,W
+005C:  SUBLW  0C
+005D:  BTFSS  03.0
+005E:  GOTO   06C
+.................... 		{ 
+.................... 			aux++; 
+005F:  INCF   21,F
+.................... 			if (aux==13) aux=0; 
+0060:  MOVF   21,W
+0061:  SUBLW  0D
+0062:  BTFSC  03.2
+0063:  CLRF   21
+.................... 			posletra[iaux]=aux;		      	 
+0064:  MOVLW  53
+0065:  ADDWF  22,W
+0066:  MOVWF  04
+0067:  BCF    03.7
+0068:  MOVF   21,W
+0069:  MOVWF  00
+.................... 		} 
+006A:  INCF   22,F
+006B:  GOTO   05B
+.................... } 
+.................... void recargadatos() 
+.................... { 
+.................... nu1++; 
+*
+004D:  INCF   36,F
+.................... if (nu1 == tamletra[posletra[0]])intercambialetras(); 
+004E:  MOVLW  39
+004F:  ADDWF  53,W
+0050:  MOVWF  04
+0051:  BCF    03.7
+0052:  MOVF   00,W
+0053:  SUBWF  36,W
+0054:  BTFSS  03.2
+0055:  GOTO   06C
+....................  
+.................... 	tl2=tamletra[posletra[0]]-nu1+1; 
+*
+006C:  MOVLW  39
+006D:  ADDWF  53,W
+006E:  MOVWF  04
+006F:  BCF    03.7
+0070:  MOVF   36,W
+0071:  SUBWF  00,W
+0072:  ADDLW  01
+0073:  MOVWF  38
+.................... 	for(iaux=0;iaux<20;iaux++) 
+0074:  CLRF   22
+0075:  MOVF   22,W
+0076:  SUBLW  13
+0077:  BTFSS  03.0
+0078:  GOTO   07F
+.................... 		{ 
+.................... 			 
+.................... 			if (tl2>=30) {}		      	 
+0079:  MOVF   38,W
+007A:  SUBLW  1D
+007B:  BTFSC  03.0
+007C:  GOTO   07D
+.................... 		} 
+007D:  INCF   22,F
+007E:  GOTO   075
+.................... letras=0; 
+007F:  CLRF   35
+.................... while (tl2<=30) 
+.................... {letras++; 
+0080:  MOVF   38,W
+0081:  SUBLW  1E
+0082:  BTFSS  03.0
+0083:  GOTO   092
+0084:  INCF   35,F
+.................... tl2=tl2+tamletra[posletra[letras]]+1; 
+0085:  MOVLW  53
+0086:  ADDWF  35,W
+0087:  MOVWF  04
+0088:  BCF    03.7
+0089:  MOVLW  39
+008A:  ADDWF  00,W
+008B:  MOVWF  04
+008C:  BCF    03.7
+008D:  MOVF   00,W
+008E:  ADDWF  38,W
+008F:  ADDLW  01
+0090:  MOVWF  38
+.................... } 
+0091:  GOTO   080
+.................... iaux=tl2-30; 
+0092:  MOVLW  1E
+0093:  SUBWF  38,W
+0094:  MOVWF  22
+.................... nu2=tamletra[posletra[letras]]-iaux; 
+0095:  MOVLW  53
+0096:  ADDWF  35,W
+0097:  MOVWF  04
+0098:  BCF    03.7
+0099:  MOVLW  39
+009A:  ADDWF  00,W
+009B:  MOVWF  04
+009C:  BCF    03.7
+009D:  MOVF   22,W
+009E:  SUBWF  00,W
+009F:  MOVWF  37
+.................... } 
+00A0:  RETLW  00
+.................... void set01() 
+.................... { 
+....................  	delay_us(2); 
+00A1:  GOTO   0A2
+....................  	RD1=0;//clock 
+00A2:  BCF    08.1
+....................  	delay_us(2); 
+00A3:  GOTO   0A4
+....................  	RD1=1;//clock 
+00A4:  BSF    08.1
+.................... } 
+00A5:  RETLW  00
+.................... void letrero() 
+.................... { 
+.................... 	for(apbi=0;apbi<7;apbi++) 
+*
+0170:  CLRF   23
+0171:  MOVF   23,W
+0172:  SUBLW  06
+0173:  BTFSS  03.0
+0174:  GOTO   1E3
+.................... 		{  
+.................... 			PORTC=0X00; 
+0175:  CLRF   07
+.................... 			fila(apbi); 
+0176:  MOVF   23,W
+0177:  MOVWF  62
+.................... 			PORTC=portprende[apbi]; 
+*
+01C5:  MOVLW  2E
+01C6:  ADDWF  23,W
+01C7:  MOVWF  04
+01C8:  BCF    03.7
+01C9:  MOVF   00,W
+01CA:  MOVWF  07
+.................... 			delay_ms(1);	 		      	 
+01CB:  MOVLW  01
+01CC:  MOVWF  62
+....................     	} 
+*
+01E1:  INCF   23,F
+01E2:  GOTO   171
+.................... } 
+01E3:  BCF    0A.3
+01E4:  BCF    0A.4
+01E5:  GOTO   261 (RETURN)
+....................  
+.................... void reset(void) 
+.................... { 
+....................  	RD2=0;//data 
+*
+0047:  BCF    08.2
+....................  	delay_us(2); 
+0048:  GOTO   049
+....................  	RD2=1;//clock	 
+0049:  BSF    08.2
+.................... } 
+004A:  BCF    0A.3
+004B:  BCF    0A.4
+004C:  GOTO   255 (RETURN)
+....................  
+....................  
+....................  
+....................  
+.................... /* 
+.................... void set0(void){ 
+....................  RD0=0;//data 
+....................  waitjg(); 
+....................  RD1=0;//clock 
+....................  waitjg(); 
+....................  RD1=1;//clock 
+.................... } 
+.................... void set1(void){ 
+....................  RD0=1;//data 
+....................  waitjg(); 
+....................  RD1=0;//clock 
+....................  waitjg(); 
+....................  RD1=1;//clock 
+.................... } 
+.................... */ 
+
+Configuration Fuses:
+   Word  1: 3F72   HS NOWDT PUT NODEBUG NOPROTECT BROWNOUT NOLVP NOCPD NOWRT

@@ -1,0 +1,106 @@
+#INCLUDE "C:\Archivos de programa\PICC\Devices\16f877a.h"
+#FUSES HS,NOWDT,NOLVP,PUT,NOPROTECT
+#USE delay(clock=20000000)
+#BYTE PORTB=0x06 
+#BYTE PORTD=0x08 
+#BIT RD0=0x08.0
+#BIT RD1=0x08.1
+#BIT RD2=0x08.2
+#BIT RD3=0x08.3
+#BIT RD4=0x08.4
+
+
+long tiemp=500;
+ int const letherA[5]={0x7E,0x09,0x09,0x09,0x7E};
+ int const letherB[5]={0x7F,0x49,0x49,0x49,0x36};
+
+void letraA()
+	{
+        RD4=0;
+		PORTB=letherA[0];
+		RD0=1;	
+		delay_us(tiemp);
+		
+		RD0=0;
+		PORTB=letherA[1];
+		RD1=1;	
+		delay_us(tiemp);
+		
+		RD1=0;
+		PORTB=letherA[2];
+		RD2=1;	
+		delay_us(tiemp);
+		
+		RD2=0;
+		PORTB=letherA[3];
+		RD3=1;	
+		delay_us(tiemp);
+		
+		RD3=0;
+		PORTB=letherA[4];
+		RD4=1;	
+		delay_us(tiemp);
+
+
+}
+void letraB()
+	{
+        RD4=0;
+		PORTB=letherB[0];
+		RD0=1;	
+		delay_us(tiemp);
+		
+		RD0=0;
+		PORTB=letherB[1];
+		RD1=1;	
+		delay_us(tiemp);
+		
+		RD1=0;
+		PORTB=letherB[2];
+		RD2=1;	
+		delay_us(tiemp);
+		
+		RD2=0;
+		PORTB=letherB[3];
+		RD3=1;	
+		delay_us(tiemp);
+		
+		RD3=0;
+		PORTB=letherB[4];
+		RD4=1;	
+		delay_us(tiemp);
+
+
+}
+
+
+
+void main(void)
+{
+	long nh=0;
+	set_tris_b(0x00);
+	set_tris_d(0x00);
+	PORTB=0;
+	PORTD=0;
+	while(TRUE)
+	{	
+		
+		if (nh<=2000)
+		{
+	 		letraA();
+	 	
+        }
+        else
+        {	
+	 		letraB();
+	 	
+	 	}
+	 		nh++;
+	 		if (nh>=4000)
+	 		{
+	 			nh=0;
+	 		}
+		
+	}	
+}
+

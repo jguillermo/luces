@@ -1,0 +1,20 @@
+ÀÄmainLuces
+   ÀÄMAIN  0/61  Ram=0
+      ÃÄ??0??
+      ÃÄreset  0/9  Ram=0
+      ³  ÀÄwaitjg  (Inline)  Ram=0
+      ÀÄletrero  0/66  Ram=0
+         ÃÄwaitletra  0/22  Ram=0
+         ³  ÀÄ@delay_ms1  (Inline)  Ram=1
+         ÃÄwaitletra  0/22  Ram=0
+         ³  ÀÄ@delay_ms1  (Inline)  Ram=1
+         ÃÄwaitletra  0/22  Ram=0
+         ³  ÀÄ@delay_ms1  (Inline)  Ram=1
+         ÃÄwaitletra  0/22  Ram=0
+         ³  ÀÄ@delay_ms1  (Inline)  Ram=1
+         ÃÄwaitletra  0/22  Ram=0
+         ³  ÀÄ@delay_ms1  (Inline)  Ram=1
+         ÃÄwaitletra  0/22  Ram=0
+         ³  ÀÄ@delay_ms1  (Inline)  Ram=1
+         ÀÄwaitletra  0/22  Ram=0
+            ÀÄ@delay_ms1  (Inline)  Ram=1

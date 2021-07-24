@@ -1,0 +1,5 @@
+>>> Warning 202 "mainLuces.c" Line 27(6,9): Variable never used:   nu1
+>>> Warning 202 "mainLuces.c" Line 27(12,15): Variable never used:   nu2
+>>> Warning 202 "mainLuces.c" Line 27(18,21): Variable never used:   nu3
+      Memory usage:   ROM=5%      RAM=10% - 11%
+      0 Errors,  3 Warnings.

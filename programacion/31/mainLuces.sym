@@ -1,0 +1,112 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004     @WRITE_PROGRAM_MEMORY8.P2
+007     PORTC
+008.0   RD0
+008     PSP_DATA
+008     PORTD
+008.1   RD1
+008.2   RD2
+015-016 CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B-01C CCP_2
+01C     CCP_2_HIGH
+020     useg1
+021     aux
+022     iaux
+023     apbi
+024     apbi2
+025     intsb
+026     auxfila
+027     nufra
+028     i
+029     j
+02A     iselect
+02B     num
+02C     num2
+02D     posled2
+02E-034 portprende
+035     letras
+036     nu1
+037     nu2
+038     tl2
+039-045 tamletra
+046-052 frace
+053-05F posletra
+060     @TRIS_C
+061     main.nh
+062     @delay_ms1.P1
+062     fila.nu
+062     intercambialetras.@SCRATCH1
+062     recargadatos.@SCRATCH1
+063     fila.@SCRATCH1
+063     intercambialetras.@SCRATCH2
+063     recargadatos.@SCRATCH2
+064     fila.@SCRATCH2
+065     fila.@SCRATCH3
+066     fila.@SCRATCH4
+067     llenafila.nu
+068     llenafila.letra
+069     llenafila.ini
+06A     llenafila.fin
+06B     llenafila.@SCRATCH1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+07B     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+01CD  @delay_ms1
+0004  vacio
+000F  A
+0018  B
+0022  C
+002C  D
+0037  E
+0042  apos
+01E6  main
+00A6  llenafila
+0165  @goto10157
+0178  fila
+0056  intercambialetras
+004D  recargadatos
+00A1  set01
+0170  letrero
+0047  reset
+01E6  @cinit
+
+Project Directory:
+    D:\luces\programacion\30 nueva generacion, usando otro tipo de codigo\
+
+Project Files:
+    mainLuces.c
+    C:\Archivos de programa\PICC\Devices\16f877a.h
+
+Units:
+    mainLuces.c (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      mainLuces.err
+    Ext Symbols: mainLuces.esym
+    INHX8:       mainLuces.hex
+    Symbols:     mainLuces.sym
+    List:        mainLuces.lst
+    Debug/COFF:  mainLuces.cof
+    Project:     mainLuces.PJT
+    Call Tree:   mainLuces.tre
+    Statistics:  mainLuces.sta

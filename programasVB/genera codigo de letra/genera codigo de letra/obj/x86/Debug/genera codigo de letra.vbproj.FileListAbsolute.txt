@@ -1,0 +1,11 @@
+D:\luces\programasVB\genera codigo de letra\genera codigo de letra\bin\Debug\genera codigo de letra.exe
+D:\luces\programasVB\genera codigo de letra\genera codigo de letra\bin\Debug\genera codigo de letra.pdb
+D:\luces\programasVB\genera codigo de letra\genera codigo de letra\bin\Debug\genera codigo de letra.xml
+D:\luces\programasVB\genera codigo de letra\genera codigo de letra\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\luces\programasVB\genera codigo de letra\genera codigo de letra\obj\x86\Debug\WindowsApplication1.Form1.resources
+D:\luces\programasVB\genera codigo de letra\genera codigo de letra\obj\x86\Debug\WindowsApplication1.Resources.resources
+D:\luces\programasVB\genera codigo de letra\genera codigo de letra\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\luces\programasVB\genera codigo de letra\genera codigo de letra\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\luces\programasVB\genera codigo de letra\genera codigo de letra\obj\x86\Debug\genera codigo de letra.exe
+D:\luces\programasVB\genera codigo de letra\genera codigo de letra\obj\x86\Debug\genera codigo de letra.xml
+D:\luces\programasVB\genera codigo de letra\genera codigo de letra\obj\x86\Debug\genera codigo de letra.pdb

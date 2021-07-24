@@ -1,0 +1,50 @@
+C:\Documents and Settings\Administrador\Escritorio\programasVB\2\bin\Debug\matrixLED.exe
+C:\Documents and Settings\Administrador\Escritorio\programasVB\2\bin\Debug\matrixLED.pdb
+C:\Documents and Settings\Administrador\Escritorio\programasVB\2\bin\Debug\matrixLED.xml
+C:\Documents and Settings\Administrador\Escritorio\programasVB\2\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrador\Escritorio\programasVB\2\obj\Debug\WindowsApplication1.Form1.resources
+C:\Documents and Settings\Administrador\Escritorio\programasVB\2\obj\Debug\WindowsApplication1.Resources.resources
+C:\Documents and Settings\Administrador\Escritorio\programasVB\2\obj\Debug\matrixLED.vbproj.GenerateResource.Cache
+C:\Documents and Settings\Administrador\Escritorio\programasVB\2\obj\Debug\matrixLED.exe
+C:\Documents and Settings\Administrador\Escritorio\programasVB\2\obj\Debug\matrixLED.xml
+C:\Documents and Settings\Administrador\Escritorio\programasVB\2\obj\Debug\matrixLED.pdb
+C:\Documents and Settings\Administrador\Escritorio\programasVB\3\obj\Debug\matrixLED.exe
+C:\Documents and Settings\Administrador\Escritorio\programasVB\3\obj\Debug\matrixLED.xml
+C:\Documents and Settings\Administrador\Escritorio\programasVB\3\obj\Debug\matrixLED.pdb
+C:\Documents and Settings\Administrador\Escritorio\programasVB\3\bin\Debug\matrixLED.exe
+C:\Documents and Settings\Administrador\Escritorio\programasVB\3\bin\Debug\matrixLED.pdb
+C:\Documents and Settings\Administrador\Escritorio\programasVB\3\bin\Debug\matrixLED.xml
+C:\Documents and Settings\Administrador\Escritorio\programasVB\3\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrador\Escritorio\programasVB\3\obj\Debug\WindowsApplication1.Form1.resources
+C:\Documents and Settings\Administrador\Escritorio\programasVB\3\obj\Debug\WindowsApplication1.Resources.resources
+C:\Documents and Settings\Administrador\Escritorio\programasVB\3\obj\Debug\matrixLED.vbproj.GenerateResource.Cache
+C:\Documents and Settings\Administrador\Escritorio\programasVB\4\obj\Debug\matrixLED.exe
+C:\Documents and Settings\Administrador\Escritorio\programasVB\4\obj\Debug\matrixLED.xml
+C:\Documents and Settings\Administrador\Escritorio\programasVB\4\obj\Debug\matrixLED.pdb
+C:\Documents and Settings\Administrador\Escritorio\programasVB\4\bin\Debug\matrixLED.exe
+C:\Documents and Settings\Administrador\Escritorio\programasVB\4\bin\Debug\matrixLED.pdb
+C:\Documents and Settings\Administrador\Escritorio\programasVB\4\bin\Debug\matrixLED.xml
+C:\Documents and Settings\Administrador\Escritorio\programasVB\4\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrador\Escritorio\programasVB\4\obj\Debug\WindowsApplication1.Form1.resources
+C:\Documents and Settings\Administrador\Escritorio\programasVB\4\obj\Debug\WindowsApplication1.Resources.resources
+C:\Documents and Settings\Administrador\Escritorio\programasVB\4\obj\Debug\matrixLED.vbproj.GenerateResource.Cache
+D:\luces\programasVB\5\obj\Debug\matrixLED.exe
+D:\luces\programasVB\5\obj\Debug\matrixLED.xml
+D:\luces\programasVB\5\obj\Debug\matrixLED.pdb
+D:\luces\programasVB\5\bin\Debug\matrixLED.exe
+D:\luces\programasVB\5\bin\Debug\matrixLED.pdb
+D:\luces\programasVB\5\bin\Debug\matrixLED.xml
+D:\luces\programasVB\5\obj\Debug\ResolveAssemblyReference.cache
+D:\luces\programasVB\5\obj\Debug\WindowsApplication1.Form1.resources
+D:\luces\programasVB\5\obj\Debug\WindowsApplication1.Resources.resources
+D:\luces\programasVB\5\obj\Debug\matrixLED.vbproj.GenerateResource.Cache
+D:\luces\programasVB\6 reconstruccion\obj\Debug\matrixLED.exe
+D:\luces\programasVB\6 reconstruccion\obj\Debug\matrixLED.xml
+D:\luces\programasVB\6 reconstruccion\obj\Debug\matrixLED.pdb
+D:\luces\programasVB\6 reconstruccion\bin\Debug\matrixLED.exe
+D:\luces\programasVB\6 reconstruccion\bin\Debug\matrixLED.pdb
+D:\luces\programasVB\6 reconstruccion\bin\Debug\matrixLED.xml
+D:\luces\programasVB\6 reconstruccion\obj\Debug\ResolveAssemblyReference.cache
+D:\luces\programasVB\6 reconstruccion\obj\Debug\WindowsApplication1.Form1.resources
+D:\luces\programasVB\6 reconstruccion\obj\Debug\WindowsApplication1.Resources.resources
+D:\luces\programasVB\6 reconstruccion\obj\Debug\matrixLED.vbproj.GenerateResource.Cache
